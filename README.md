@@ -20,10 +20,13 @@ The engineering work focuses on:
 
 **Current status:** A local pilot application. Independent HTTPS hosting and on-device offline answering are not complete. It is a reference aid, not a substitute for approved manuals or aircraft-specific checks.
 
-## Project activity
+## Development activity
 
-| Development history | Pull requests | Commits on main |
-| --- | ---: | ---: |
-| September 2026 (under 1 month) | 3 | 80 |
+WingIndex and WingIndex Next are separate private repositories in the same project family. Their GitHub histories show **30 pull requests in total, 28 merged**:
 
-*Figures reflect the private development repository as of September 24, 2026. This public repository contains an overview and diagram; source code and manual content remain private.*
+| Repository | Development history | Pull requests | Merged | Commits on main |
+| --- | --- | ---: | ---: | ---: |
+| WingIndex | August–September 2026 (~1 month) | 27 | 25 | 65 |
+| WingIndex Next | September 2026 (under 1 month) | 3 | 3 | 80 |
+
+*Figures are repository-specific snapshots as of September 24, 2026. The public repository contains an overview and diagram; source code and manual content remain private.*
