@@ -4,6 +4,8 @@
 
 WingIndex Next is a private, locally running pilot-document application. It helps authorized users search their own manual libraries, ask questions, and open the exact source pages behind an answer.
 
+**Source-grounded by design:** the answer generator is instructed to use only retrieved pages from the user's authorized library. Each factual paragraph, list item, or table row needs its own page citation. The validation path rejects missing or invalid citations and can limit or withhold answers when source coverage is incomplete. Citations make claims traceable; they do not guarantee that every generated interpretation is correct.
+
 ## The answer flow
 
 ![WingIndex Next source-grounded answer flow](assets/wingindex-next-workflow.png)
@@ -11,10 +13,12 @@ WingIndex Next is a private, locally running pilot-document application. It help
 The engineering work focuses on:
 
 - Checking a user's library access before search, answer generation, or source viewing.
-- Retrieving relevant document pages and building answers with page-level citations.
+- Building a RAG pipeline that retrieves relevant document pages and gives the answer generator bounded source context. Retrieval can use lexical search and compatible vector embeddings.
+- Splitting supported text-layer PDF pages into overlapping chunks, preparing embeddings, and validating the index against the original source. The initial manual pack reused existing validated vectors rather than embedding those PDFs again.
 - Binding citations to a document revision and original PDF page.
 - Letting readers open the cited page as a preview instead of downloading an entire manual.
 - Preparing supported text-layer PDFs with resumable uploads and processing checkpoints.
+- Using an evaluation harness with frozen question sets, replayable retrieval context, and source checks to study answer quality and regressions. These evaluations are separate from the application's normal answer path.
 
 **Selected stack:** Node.js, SQLite, a responsive web client, and PDF page previews.
 
